@@ -1,0 +1,24 @@
+{
+    "name": "nodejs-guide",
+    "version": "1.0.0",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PDS-Minh/Guide_NodeJS.git"
+    },
+    "bugs": {
+        "url": "https://github.com/PDS-Minh/Guide_NodeJS/issues"
+    },
+    "homepage": "https://github.com/PDS-Minh/Guide_NodeJS#readme",
+    "dependencies": {
+        "dayjs": "^1.11.13"
+    }
+}
