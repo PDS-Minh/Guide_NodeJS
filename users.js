@@ -2,13 +2,23 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { connectDB, closeDB } from './db.js';
 import { ObjectId } from 'mongodb';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 dotenv.config();
 
 const app = express();
 const port = 3000;
 
+// __dirname setting 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// set static file(public folder)
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 let db;
 let collection;
@@ -26,6 +36,11 @@ async function startServer() {
     console.error('❌ Server Start Error:', err);
   }
 }
+
+// Provide index.html on root URL request
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Create User
 app.post('/users', async (req, res) => {
