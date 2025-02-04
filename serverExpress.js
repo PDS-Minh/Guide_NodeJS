@@ -5,7 +5,7 @@ import dotenv from 'dotenv'; // import dotenv package
 dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 // Use .env variables
 const gmailPassword = process.env.GMAIL_PASSWORD;
